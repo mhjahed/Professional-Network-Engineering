@@ -27,9 +27,9 @@ observability, backups, security reasoning) has to be done properly.
 ```
  React+TS SPA ──HTTPS──▶ nginx ──▶ Django/DRF (gunicorn)  ──▶ PostgreSQL
                                      │  │  ▲                    ▲
-                     OpenAPI schema ◀┘  │  │ /health/live,ready │
-                                        ▼  │                    │
-                                      Redis ◀── Celery workers ─┘   (email, webhooks, SLA scan, retention)
+                  OpenAPI schema ◀┘  │  │ /health/live,ready │
+                                      ▼  │                    │
+                                   Redis ◀── Celery workers ─┘   (email, webhooks, SLA scan, retention)
                                         ▲          ▲
                                    Celery beat  Mailpit (dev inbox)
  GitHub Actions: ruff · mypy · pytest (+coverage) · docker build · schema diff · pip-audit/bandit
